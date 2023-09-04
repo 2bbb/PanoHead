@@ -96,6 +96,7 @@ def convert_sdf_samples_to_ply(
     el_faces = plyfile.PlyElement.describe(faces_tuple, "face")
 
     ply_data = plyfile.PlyData([el_verts, el_faces])
+    ply_data.text = True
     ply_data.write(ply_filename_out)
     print(f"wrote to {ply_filename_out}")
 
